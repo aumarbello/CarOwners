@@ -3,7 +3,6 @@ package com.aumarbello.carowners.ui.filter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.aumarbello.carowners.R
 import com.aumarbello.carowners.databinding.ItemFilterBinding
@@ -34,16 +33,19 @@ class FilterAdapter (
         private val binding = ItemFilterBinding.bind(view)
 
         fun bindItem(item: Filter) {
+            val res = itemView.resources
             binding.gender.text = item.gender
 
-            binding.colors.isVisible = item.colors.isNotEmpty()
-            if (item.colors.isNotEmpty()) {
-                binding.colors.text = item.colors.joinToString()
+            binding.colors.text = if (item.colors.isNotEmpty()) {
+                 item.colors.joinToString()
+            } else {
+                res.getString(R.string.label_none)
             }
 
-            binding.countries.isVisible = item.countries.isNotEmpty()
-            if (item.countries.isNotEmpty()) {
-                binding.countries.text = item.countries.joinToString()
+            binding.countries.text = if (item.countries.isNotEmpty()) {
+                item.countries.joinToString()
+            } else {
+                res.getString(R.string.label_none)
             }
 
             itemView.setOnClickListener {

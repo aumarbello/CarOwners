@@ -4,5 +4,6 @@
     <string name="label_filter">Filter</string>
     <string name="label_car_owners">Car owners</string>
     <string name="label_empty_car_owners">No car owners match the specified filter.</string>
-    <string name="label_empty_filter">No filters availabel!</string>
+    <string name="label_empty_filter">No filters available!</string>
+    <string name="label_none">None</string>
 </resources>
