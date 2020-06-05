@@ -1,5 +1,7 @@
 package com.aumarbello.carowners.models
 
+import com.aumarbello.carowners.utils.toInitialCap
+
 data class FilterResponse (
     val id: String,
     val avatar: String,
@@ -11,7 +13,7 @@ data class FilterResponse (
 ) {
     fun toFilter(): Filter {
         return Filter(
-            gender, colors, countries
+            gender.toInitialCap(), colors, countries
         )
     }
 }
