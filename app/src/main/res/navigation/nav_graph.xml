@@ -10,5 +10,22 @@
         android:name="com.aumarbello.carowners.ui.filter.FilterFragment"
         android:label="@string/label_filter"
         tools:layout="@layout/fragment_filter"
-        />
+        >
+        <action
+            android:id="@+id/to_car_owners_fragment"
+            app:destination="@id/car_owners_fragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/car_owners_fragment"
+        android:name="com.aumarbello.carowners.ui.owners.CarOwnersFragment"
+        android:label="@string/label_car_owners"
+        tools:layout="@layout/fragment_car_owners">
+
+        <argument
+            android:name="filter"
+            app:argType="com.aumarbello.carowners.models.Filter"
+            />
+    </fragment>
 </navigation>

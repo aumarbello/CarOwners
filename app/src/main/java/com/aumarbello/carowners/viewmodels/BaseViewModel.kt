@@ -1,5 +1,6 @@
 package com.aumarbello.carowners.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -23,7 +24,7 @@ abstract class BaseViewModel <T> : ViewModel() {
                 _loader.value = true
                 _response.value = block()
             } catch (ex: Throwable) {
-                ex.printStackTrace()
+                Log.e("BaseViewModel", "An error occurred", ex)
 
                 _error.value = Event(resolveErrorMessage(ex) ?: "An error occurred")
             } finally {

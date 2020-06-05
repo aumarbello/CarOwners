@@ -9,7 +9,14 @@ import com.aumarbello.carowners.R
 import com.aumarbello.carowners.databinding.ItemFilterBinding
 import com.aumarbello.carowners.models.Filter
 
-class FilterAdapter (private val items: List<Filter>): RecyclerView.Adapter<FilterAdapter.FilterHolder>() {
+class FilterAdapter (
+    private val listener: FilterClickListener,
+    private val items: List<Filter>
+): RecyclerView.Adapter<FilterAdapter.FilterHolder>() {
+    interface FilterClickListener {
+        fun onFilterSelected(filter: Filter)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilterHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.item_filter, parent, false)
@@ -37,6 +44,10 @@ class FilterAdapter (private val items: List<Filter>): RecyclerView.Adapter<Filt
             binding.countries.isVisible = item.countries.isNotEmpty()
             if (item.countries.isNotEmpty()) {
                 binding.countries.text = item.countries.joinToString()
+            }
+
+            itemView.setOnClickListener {
+                listener.onFilterSelected(item)
             }
         }
     }
