@@ -5,11 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="5dp"
-    android:layout_marginEnd="5dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp"
-    app:cardElevation="3dp"
+    android:layout_marginStart="@dimen/spacing_horizontal"
+    android:layout_marginEnd="@dimen/spacing_horizontal"
+    app:cardElevation="5dp"
     app:cardCornerRadius="5dp"
     android:clipToPadding="false"
     android:clipChildren="false"
@@ -22,18 +20,54 @@
         >
 
         <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:drawableStart="@drawable/ic_name"
+            android:drawablePadding="6dp"
+            android:gravity="center_vertical"
+            tools:text="@tools:sample/full_names"
+            />
+
+        <TextView
+            android:id="@+id/job"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:drawableStart="@drawable/ic_work"
+            android:drawablePadding="6dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            tools:text="Accountant"
+            />
+
+        <TextView
             android:id="@+id/gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
             android:drawableStart="@drawable/ic_gender"
             android:drawablePadding="6dp"
+            android:layout_marginTop="6dp"
             android:gravity="center_vertical"
             tools:text="Male"
             />
 
         <TextView
-            android:id="@+id/countries"
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="6dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            tools:text="calma@example.com"
+            />
+
+        <TextView
+            android:id="@+id/country"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
@@ -45,16 +79,28 @@
             />
 
         <TextView
-            android:id="@+id/colors"
+            android:id="@+id/car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/colorBlack"
+            android:drawableStart="@drawable/ic_car"
+            android:drawablePadding="6dp"
+            android:gravity="center_vertical"
+            tools:text="2009 Subaru, Blue"
+            />
+
+        <TextView
+            android:id="@+id/biography"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
             android:textColor="@color/colorBlack"
-            android:drawableStart="@drawable/ic_colors"
+            android:drawableStart="@drawable/ic_about"
             android:drawablePadding="6dp"
-            android:gravity="center_vertical"
-            tools:text="Blue, Purple, Green"
+            tools:text="@tools:sample/lorem/random"
+            tools:maxLines="3"
             />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

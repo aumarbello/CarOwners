@@ -40,6 +40,8 @@ class CarOwnersFragment: Fragment(R.layout.fragment_car_owners) {
             }
         }
 
+        binding.carOwnerList.addItemDecoration(SpacingDecorator())
+
         val csvFile = File(parent, Constants.FILE_NAME)
         viewModel.filterOwners(ownersArg.filter, csvFile)
 
