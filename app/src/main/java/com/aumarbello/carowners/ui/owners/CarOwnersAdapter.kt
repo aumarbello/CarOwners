@@ -23,12 +23,18 @@ class CarOwnersAdapter (private val items: List<CarOwner>): RecyclerView.Adapter
     override fun getItemCount() = items.size
 
     inner class CarOwnersHolder(view: View): RecyclerView.ViewHolder(view) {
-        private val bind = ItemOwnerBinding.bind(view)
+        private val binding = ItemOwnerBinding.bind(view)
 
         fun bindItem(item: CarOwner) {
-            bind.gender.text = item.firstName
-            bind.colors.text = item.carModel
-            bind.countries.text = item.country
+            val res = itemView.resources
+
+            binding.name.text = res.getString(R.string.format_full_name, item.firstName, item.lastName)
+            binding.job.text = item.jobTitle
+            binding.gender.text = item.gender
+            binding.email.text = item.email
+            binding.country.text = item.country
+            binding.car.text = res.getString(R.string.format_car, item.carYear, item.carModel, item.carColor)
+            binding.biography.text = item.biography
         }
     }
 }

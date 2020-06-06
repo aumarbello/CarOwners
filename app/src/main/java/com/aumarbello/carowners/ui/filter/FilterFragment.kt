@@ -11,10 +11,7 @@ import com.aumarbello.carowners.R
 import com.aumarbello.carowners.databinding.FragmentFilterBinding
 import com.aumarbello.carowners.di.DaggerAppComponent
 import com.aumarbello.carowners.models.Filter
-import com.aumarbello.carowners.utils.EventObserver
-import com.aumarbello.carowners.utils.ViewModelProviderFactory
-import com.aumarbello.carowners.utils.setTitle
-import com.aumarbello.carowners.utils.showSnackBar
+import com.aumarbello.carowners.utils.*
 import com.aumarbello.carowners.viewmodels.FilterViewModel
 import javax.inject.Inject
 
@@ -35,6 +32,8 @@ class FilterFragment: Fragment(R.layout.fragment_filter), FilterAdapter.FilterCl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentFilterBinding.bind(view)
         setTitle(R.string.label_filter)
+
+        binding.filterList.addItemDecoration(SpacingDecorator())
 
         viewModel.response.observe(viewLifecycleOwner, Observer {
             binding.emptyState.root.isVisible = it.isEmpty()

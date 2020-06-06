@@ -2,6 +2,7 @@
     android:width="20dp"
     android:height="20dp"
     android:alpha="0.8"
+    android:tint="?attr/colorControlNormal"
     android:viewportWidth="510"
     android:viewportHeight="510">
     <path

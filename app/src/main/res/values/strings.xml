@@ -6,4 +6,7 @@
     <string name="label_empty_car_owners">No car owners match the specified filter.</string>
     <string name="label_empty_filter">No filters available!</string>
     <string name="label_none">None</string>
+
+    <string name="format_full_name">%s %s</string>
+    <string name="format_car">%d %s, %s</string>
 </resources>

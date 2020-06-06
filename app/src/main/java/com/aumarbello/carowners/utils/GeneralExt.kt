@@ -1,5 +1,7 @@
 package com.aumarbello.carowners.utils
 
+import androidx.annotation.StringRes
+import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
 fun String.toInitialCap(): String {
@@ -18,4 +20,8 @@ fun String.toInitialCap(): String {
         }
     }
     return this
+}
+
+fun RecyclerView.ViewHolder.getString(@StringRes res: Int, vararg args: Any): String {
+    return itemView.resources.getString(res, args)
 }
